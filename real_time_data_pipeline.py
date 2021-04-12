@@ -210,8 +210,8 @@ if __name__ == "__main__":
     transaction_detail_df_7.writeStream \
       .trigger(processingTime='5 seconds') \
       .format("json") \
-      .option("path", "/data/json/trans_detail_raw_data") \
-      .option("checkpointLocation", "/data/checkpoint/trans_detail_raw_data") \
+      .option("path", "/tmp/data") \
+      .option("checkpointLocation", "/data/checkpoint") \
       .start()
 
     transaction_detail_df_7.printSchema()
